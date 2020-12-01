@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-nginx
+  name: deployment-desafio-nginx
   labels: 
     app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-nginx
+      app: deployment-desafio-nginx
   template:
     metadata:
       labels:
-        app: hello-nginx
+        app: deployment-desafio-nginx
     spec:
       containers:
         - name: nginx
@@ -22,14 +22,14 @@ spec:
 
           volumeMounts:
           - mountPath: /etc/nginx/conf.d
-            name: nginx-conf
+            name: config-desafio-nginx
             readOnly: true
 
         
       volumes:
-        - name: nginx-conf
+        - name: config-desafio-nginx
           configMap:
-            name: nginx-conf
+            name: config-desafio-nginx
             items:
               - key: nginx.conf
                 path: nginx.conf
