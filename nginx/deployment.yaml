@@ -21,15 +21,14 @@ spec:
           - containerPort: 80
 
           volumeMounts:
-          - mountPath: /etc/nginx/conf.d
-            name: config-desafio-nginx
+          - name: htmlcontent
+            mountPath: "/usr/share/nginx/html/"
             readOnly: true
-
         
       volumes:
-        - name: config-desafio-nginx
+        - name: htmlcontent
           configMap:
-            name: config-desafio-nginx
+            name: index.html
             items:
-              - key: nginx.conf
-                path: nginx.conf
+            - key: index.html
+              path: index.html
