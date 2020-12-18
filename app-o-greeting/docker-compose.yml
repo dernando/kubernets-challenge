@@ -3,6 +3,4 @@ version: '3'
 services:
     app-go-greeting:
         build: .
-        container_name: go-greeting
-        ports: 
-            - 8000:8000
+        container_name: app-go-greeting
