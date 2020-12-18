@@ -2,7 +2,7 @@ steps:
 
 - id: "Rodando docker-compose"
   name: "docker/compose"
-  args: ["-f", "app-o-greeting/docker-compose.yml","up","-d"]
+  args: ["-f", "app-o-greeting/docker-compose.yml","up","-d","--build"]
 
 - id: 'go_version'
   name: "gcr.io/cloud-builders/go"
