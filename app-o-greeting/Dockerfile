@@ -12,4 +12,4 @@ COPY --from=base /go/src/app /
 
 EXPOSE 8000
 
-CMD ["./app"]
+ENTRYPOINT ["./app"]
