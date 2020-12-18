@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernets-desafio-mysql-server
+spec: #referente ao deployment
+  replicas: 1
+  selector: #selector utilizado para a criação do service
+    matchLabels:
+      app: kubernets-desafio-mysql-server
+      tier: db
+
+  template: #referente ao pod
+    metadata:
+      labels:
+        app: kubernets-desafio-mysql-server
+        tier: db
+    
+    spec:
+      containers:
+      - image: mysql:5.7
+        name: mysql-server
+        args:
+          - "--ignore-db-dir=lost+found"
+
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: desafio-mysql-pass
+              key: password
+
+        ports:
+        - containerPort: 3306
+
+        volumeMounts: #monta o volume efetivamente
+        - mountPath: /var/lib/mysql
+          name: mysql-persistent-storage
+
+      volumes: #definição do volume
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-desafio-claim
