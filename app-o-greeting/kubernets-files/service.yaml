@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-desafio-go-greeting
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8000
+  selector:
+    app: deployment-desafio-go-greeting

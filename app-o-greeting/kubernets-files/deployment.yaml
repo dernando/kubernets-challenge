@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-desafio-go-greeting
+  labels: 
+    app: deployment-desafio-go-greeting
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-desafio-go-greeting
+  template:
+    metadata:
+      labels:
+        app: deployment-desafio-go-greeting
+    spec:
+      containers:
+        - name: go-app-greeting
+          image: dernando/go-grreting
+          ports:
+          - containerPort: 8000
