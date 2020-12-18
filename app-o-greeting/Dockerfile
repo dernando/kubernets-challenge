@@ -2,7 +2,7 @@ FROM golang:latest as base
 
 WORKDIR /go/src/app
 
-COPY app-o-greeting/src/go-greeting .
+COPY ./src/go-greeting .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o app .
 
