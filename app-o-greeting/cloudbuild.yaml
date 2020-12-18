@@ -17,7 +17,7 @@ steps:
   name: "gcr.io/cloud-builders/docker"
   args: ["push", "gcr.io/$PROJECT_ID/go-greeting:$SHORT_SHA"]
 
-#- id: "Unit Test"
-#  name: "gcr.io/cloud-builders/go"
-#  env: ["GOPATH=."]
-#  args: ["test","go-greeting"]
+- id: "Unit Test"
+  name: "gcr.io/cloud-builders/go"
+  env: ["GOPATH=."]
+  args: ["test","go-greeting"]
