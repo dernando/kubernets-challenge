@@ -9,13 +9,13 @@ steps:
   args: ["version"]
   env: ["GOPATH=."]
 
-- id: "Pull imagem"
+- id: "Gerando imagem"
   name: "gcr.io/cloud-builders/docker"
-  args: ["pull", "https://hub.docker.com/r/dernando/go-greeting"]
+  args: ["build", "-t", "gcr.io/$PROJECT_ID/app-go-greeting:$SHORT_SHA", "-f", "Dockerfile", "."]
 
-#- id: "Pushando Imagen"
-#  name: "gcr.io/cloud-builders/docker"
-#  args: ["push", "gcr.io/$PROJECT_ID/go-greeting:$SHORT_SHA"]
+- id: "Pushando Imagen"
+  name: "gcr.io/cloud-builders/docker"
+  args: ["push", "gcr.io/$PROJECT_ID/go-greeting:$SHORT_SHA"]
 
 #- id: "Unit Test"
 #  name: "gcr.io/cloud-builders/go"
