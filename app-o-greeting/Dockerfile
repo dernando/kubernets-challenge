@@ -10,6 +10,6 @@ FROM scratch as prd
 
 COPY --from=base /go/src/app /
 
-EXPOSE 8000
-
 ENTRYPOINT ["/app"]
+
+EXPOSE 8000
