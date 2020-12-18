@@ -11,7 +11,7 @@ steps:
 
 - id: "Gerando imagem"
   name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "gcr.io/$PROJECT_ID/go-greeting:$SHORT_SHA", "."]
+  args: ["build", "-t", "gcr.io/$PROJECT_ID/app-o-greeting/go-greeting:$SHORT_SHA", "."]
 
 - id: "Pushando Imagen"
   name: "gcr.io/cloud-builders/docker"
