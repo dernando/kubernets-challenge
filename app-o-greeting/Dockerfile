@@ -10,6 +10,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o app .
 
 #COPY --from=base /go/src/app /
 
-#EXPOSE 8000
+EXPOSE 8000
 
-ENTRYPOINT ["/app"]
+ENTRYPOINT ["./app"]
