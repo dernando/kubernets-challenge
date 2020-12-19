@@ -20,4 +20,4 @@ steps:
 - id: "Unit Test"
   name: "gcr.io/cloud-builders/go"
   env: ["GOPATH=."]
-  args: ["test"]
+  args: ["test","app-o-greeting/src/go-greeting/"]
