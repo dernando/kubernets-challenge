@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: go-app-greeting
-          image: dernando/go-grreting
+          image: dernando/go-greeting
           ports:
           - containerPort: 8000
