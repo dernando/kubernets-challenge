@@ -13,7 +13,7 @@ steps:
 - id: "Unit Test"
   name: "gcr.io/cloud-builders/go"
   env: ["GOPATH=."]
-  args: ["test"]
+  args: ["test","app-go-greeting"]
 
 - id: "Gerando imagem"
   name: "gcr.io/cloud-builders/docker"
