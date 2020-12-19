@@ -12,4 +12,4 @@ FROM scratch as prd
 
 #EXPOSE 8000
 
-ENTRYPOINT ["./app"]
+ENTRYPOINT ["/app"]
