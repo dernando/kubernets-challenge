@@ -7,7 +7,7 @@ func TestSayHello(t *testing.T) {
 	var resultMessage = sayHello(message)
 	var expectedMessage = "<b>Code.education Rocks!</b>"
 	
-	if resultSum != expected {
+	if resultMessage != expectedMessage {
 		t.Errorf("Resultado esperado=%s, resultado recebido %s", resultMessage, expectedMessage)
 	}
 	
